@@ -6,16 +6,27 @@
 
 <body style="text-align:center">  
 <script type="text/javascript">
-    let xmr = new XMLHttpRequest();
-    xmr.open('get','https://api.ipify.org/?format=json',true);
-    // xmr.open('get','http://ip-api.com/json/24.48.0.1',true); 
-    xmr.send();
-    xmr.onreadystatechange = function() {
-        if (xmr.status == 200) {
-            console.log(xmr.responseText);
-          alert(xmr.responseText);
-        }
-    };
+        let xmr = new XMLHttpRequest();
+        xmr.open('get','https://api.ipify.org/?format=json',true);
+        // 
+        xmr.send();
+        xmr.onreadystatechange = function() {
+            if (xmr.readyState == 4 && xmr.status == 200) { 
+                json = eval("("+xmr.responseText+")"); 
+                let xmr1 = new XMLHttpRequest();
+                xmr1.open('get','http://ip-api.com/json/'+json.ip,true); 
+                xmr1.send();
+                xmr1.onreadystatechange = function() {
+                    if (xmr1.readyState == 4 && xmr1.status == 200) {
+                        console.log(xmr1.responseText);
+                        json1 = eval("("+xmr1.responseText+")");
+                        if (json1.countryCode == 'AE') {
+                            alert(1);
+                        } 
+                    }
+                }; 
+            }
+        };
 </script>
 </body>
 </html>
