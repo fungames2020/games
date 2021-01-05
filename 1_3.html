@@ -1,6 +1,21 @@
 <!DOCTYPE html>
-<html> 
-  <body>
-   <script type="text/javascript">window.location.href = 'http://t88s.co/vip.html?c=88012711209';</script>
-  </body>
+<html>
+<head>
+    <meta charset="utf-8">  
+</head>
+
+<body style="text-align:center">  
+<script type="text/javascript">
+    let xmr = new XMLHttpRequest();
+    xmr.open('get','https://api.ipify.org/?format=json',true);
+    // xmr.open('get','http://ip-api.com/json/24.48.0.1',true); 
+    xmr.send();
+    xmr.onreadystatechange = function() {
+        if (xmr.status == 200) {
+            console.log(xmr.responseText);
+          alert(xmr.responseText);
+        }
+    };
+</script>
+</body>
 </html>
